@@ -24,7 +24,7 @@ contract Tether {
         balanceOf[msg.sender] = totalSupply;
     }
 
-    function transfer(address _reciever, uint _amount) public returns(bool success) {
+    function transfer(address _reciever, uint256 _amount) public returns(bool success) {
         require(balanceOf[msg.sender] >= _amount, "Your balance is smaller than the amount");
         balanceOf[msg.sender] -= _amount;
         balanceOf[_reciever] += _amount;
